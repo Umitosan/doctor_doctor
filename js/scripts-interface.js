@@ -10,7 +10,7 @@ $(document).ready(function(){
     myQuery.getDoctors(condition).then(function(result){
       console.log("stuff: ",result);
       curentQueryData = result;
-      $('.sub_search').removeClass("hidden");
+      $('.results_group').removeClass("hidden");
       $('#search_results').empty();
       result.data.forEach(function(doctor){
         var docSpecList = [];
@@ -39,8 +39,9 @@ $(document).ready(function(){
     }); // end getDOctorsByIssue
   }); // end button click
 
-  $('button.sub_search').click(function() {
-    console.log('sub_search clicked');
-  });
+  // $('#refined_search').submit(function(event) {
+  //   event.preventDefault();
+  //   console.log('refined_search clicked');
+  // });
 
 });
