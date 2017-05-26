@@ -5,8 +5,21 @@ exports.getDoctors = function(medicalIssue) {
    .then(function(results) {
       console.log("result: ", results);
       console.log("result.data.length ", results.data.length);
+      $('#search_results').empty();
       results.data.forEach(function(doctor){
-        $('#search_results').append("<h4> Name: " + doctor.profile.first_name + doctor.profile.last_name + "</h4>");
+        $('#search_results').append(
+            "<div class='row doctor_row'>" +
+              "<div class='col-sm-4'>" +
+                "<h4> Name: </h4><p>" + doctor.profile.first_name + doctor.profile.last_name + doctor.profile.title + "</p>" +
+              "</div>" +
+              "<div class='col-sm-4'>" +
+                "<h4> Primary Practice: </h4><p>" + doctor.practices[0].name + "</p>" +
+              "</div>" +
+              "<div class='col-sm-4'>" +
+                "<img src='" + doctor.profile.image_url + "'>" +
+              "</div>" +
+            "</div>" + "<hr>"
+          );
       });
     })
    .fail(function(error){
