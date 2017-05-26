@@ -6,18 +6,22 @@
 
 ## Description
 
-__
+_This simple web app primarily serves to demonstrate the use of a publicly served API ('BetterDoctor' in this case). This is also meant to be an exerices in the use of other Javascript tools such as Node.js, node package manager, and the bower package manager._
 
 ### Prerequisites
 
 Web browser with ES6 compatibility
 node.js
+ruby (with gem "sass")
 
 ### Setup and Install
 
+On a Mac running OSX:
+Run the following commands in your terminal:
 
 ```
-
+$ npm install
+$ bower install
 ```
 
 ## Technologies Used
@@ -25,18 +29,19 @@ node.js
 * _HTML5_
 * _CSS3_
 * _Bootstrap_
-* __
+* _ES5/ES6_
+* _BetterDoctor API_
 
 ## Specifications
 
 | behavior |  input   |  output  |
 |----------|:--------:|:--------:|
-
+|The user searches for a doctor in their area by ailment using a form on the homepage | User enters "arthritis" and clicks a submit button | a list of doctors who specialize in arthritis are show on the page |
 
 ## Essential User Stories
 
-* As a non-profit employee, I want to view, add, update and delete projects.
-
+* As a user, I want to search for doctors in my area.
+* As a user, I want to search for doctors who specialize in my ailment.
 
 ## Authors
 
