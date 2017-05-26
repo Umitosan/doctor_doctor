@@ -12,16 +12,25 @@
   <body>
 
     <div class="banner">
-      <h1>Find your path</h1>
+      <h1>Start your path</h1>
     </div>
 
     <div class="container">
+      <h1>Find a Doctor</h1>
       <div class="row">
         <div class="col-sm-12">
-          <label for="condition">Search for doctors by condition</label>
+          <h4>Search by keyword</h4>
+          <h5>(name, speciality, practice, ailment, etc)</h5>
           <br>
-          <input type="text" name="condition" placeholder="condition">
-          <button id="search_btn" class="btn btn-info btn-sm">search</button>
+          <div class="btn_group">
+            <input type="text" name="keyword" placeholder="keyword">
+            <button id="search_btn_main" class="btn btn-success btn-sm">search</button>
+          </div>
+          <br>
+          <div class="btn_group">
+            <input class="sub_search hidden" type="text" name="within" placeholder="refine search">
+            <button class="btn btn-info btn-sm sub_search hidden">search</button>
+          </div>
           <h3>Your querry results:</h3>
           <div id="search_results"></div>
         </div>

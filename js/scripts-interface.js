@@ -1,13 +1,16 @@
-var Querry = require('./../js/scripts.js').querryModule;
+var Query = require('./../js/scripts.js').queryModule;
 
 $(document).ready(function(){
 
   var myQuery = new Query();
+  var currentQueryData;
 
-  $('#search_btn').click(function() {
+  $('#search_btn_main').click(function() {
     var condition = $('.row input').val();
-    myQuery.getDoctorsByIssue(condition).then(function(result){
+    myQuery.getDoctors(condition).then(function(result){
       console.log("stuff: ",result);
+      curentQueryData = result;
+      $('.sub_search').removeClass("hidden");
       $('#search_results').empty();
       result.data.forEach(function(doctor){
         var docSpecList = [];
@@ -21,7 +24,7 @@ $(document).ready(function(){
               "<img src='" + doctor.profile.image_url + "'>" +
             "</div>" +
             "<div class='col-sm-2'>" +
-              "<h4> Name: </h4><p>" + doctor.profile.first_name + doctor.profile.last_name + doctor.profile.title + "</p>" +
+              "<h4> Name: </h4><p>" + doctor.profile.first_name + " " +  doctor.profile.last_name + ", " + doctor.profile.title + "</p>" +
             "</div>" +
             "<div class='col-sm-2'>" +
               "<h4> Primary Practice: </h4><p>" + doctor.practices[0].name + "</p>" +
@@ -35,5 +38,9 @@ $(document).ready(function(){
       }); // end result.data.forEach
     }); // end getDOctorsByIssue
   }); // end button click
+
+  $('button.sub_search').click(function() {
+    console.log('sub_search clicked');
+  });
 
 });
