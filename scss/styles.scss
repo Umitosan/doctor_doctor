@@ -1,4 +1,24 @@
 
-h1  {
-  text-align: center;
+body {
+  background-color: #f2f7ff;
+}
+
+.banner {
+  height: 300px;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-image: url("./../../img/wellness.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1 {
+    margin-right: 100px;
+    padding-top: 100px;
+    text-align: right;
+  }
+}
+
+
+hr {
+	border-top: 1px solid #8c8b8b;
 }

@@ -1,10 +1,12 @@
-var getDoctors = require('./../js/scripts.js').getDoctors;
+var Querry = require('./../js/scripts.js').querryModule;
 
 $(document).ready(function(){
 
+  var myQuery = new Query();
+
   $('#search_btn').click(function() {
     var condition = $('.row input').val();
-    getDoctors(condition);
+    myQuery.getDoctors(condition);
   });
 
 });
