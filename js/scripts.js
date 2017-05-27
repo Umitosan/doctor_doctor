@@ -14,5 +14,15 @@ Query.prototype.getDoctors = function(userQuery) {
     });
 };
 
+Query.prototype.getSpecialities = function() {
+  return $.get('https://api.betterdoctor.com/2016-03-01/specialties?skip=0&limit=30&user_key=' + apiKey)
+    .then(function(results) {
+      console.log("results success: ", results);
+      return results;
+    })
+    .fail(function(error){
+      console.log("fail");
+    });
+};
 
 exports.queryModule = Query;

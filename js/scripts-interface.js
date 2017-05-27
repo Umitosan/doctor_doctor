@@ -5,9 +5,21 @@ $(document).ready(function(){
   var myQuery = new Query();
   var currentQueryData;
 
+  // build speciality dropdown list on page load
+
+  // myQuery.getSpecialities().then(function(result) {
+  //   console.log("specialties : " , result);
+  //   result.data.forEach(function(spec) {
+  //     $('#spec_select').append(
+  //        "<option value='"+spec.name+"'>"+spec.name+"</option>"
+  //     );
+  //   });
+  // });
+
+  // serach by keyword
   $('#search_btn_main').click(function() {
-    var condition = $('.row input').val();
-    myQuery.getDoctors(condition).then(function(result){
+    var keyword = $('.row input').val();
+    myQuery.getDoctors(keyword).then(function(result){
       console.log("stuff: ",result);
       curentQueryData = result;
       $('.results_group').removeClass("hidden");
@@ -39,9 +51,11 @@ $(document).ready(function(){
     }); // end getDOctorsByIssue
   }); // end button click
 
+  // search by name and speciality
   // $('#refined_search').submit(function(event) {
   //   event.preventDefault();
-  //   console.log('refined_search clicked');
+  //   var selectedSpec = $('#spec_select :selected').val();
+  //   var selectedName = $("input [name='doc_name']]").val();
   // });
 
 });

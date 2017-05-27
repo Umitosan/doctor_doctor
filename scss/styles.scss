@@ -1,14 +1,16 @@
 
 body {
   background-color: #f2f7ff;
+  background-image: url("./../../img/back_tiles1.jpg");
+
 }
 
 .banner {
-  height: 300px;
+  height: 500px;
   width: 100%;
   margin-top: 50px;
   margin-bottom: 50px;
-  background-image: url("./../../img/wellness.jpg");
+  background-image: url("./../../img/pdx_back1_sm.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   h1 {
@@ -24,4 +26,10 @@ hr {
 
 .hidden {
   display: none;
+}
+
+.container {
+  background-color: #fffcf7;
+  border-radius: 10px;
+  border-color: none;
 }
